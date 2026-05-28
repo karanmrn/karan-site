@@ -1,4 +1,4 @@
-export type CompanySystem = {
+﻿export type CompanySystem = {
   company: string;
   role: string;
   dates: string;

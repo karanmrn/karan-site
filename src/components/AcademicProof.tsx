@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { softSkills } from "@/data/profile";
 
 export function AcademicProof() {
@@ -14,11 +14,14 @@ export function AcademicProof() {
         <p className="mt-5 text-base leading-7 text-muted">
           Karan was recognised as a Student Academic Representative during the
           2022-23 academic year. It is a useful human signal: public speaking,
-          communication, problem solving, and team work.
+          communication, problem solving, and teamwork.
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {softSkills.slice(0, 4).map((skill) => (
-            <div key={skill.name} className="rounded border border-line bg-panel p-4">
+            <div
+              key={skill.name}
+              className="rounded border border-line bg-panel/80 p-4"
+            >
               <p className="text-sm font-semibold text-foreground">
                 {skill.name}
               </p>
@@ -27,7 +30,7 @@ export function AcademicProof() {
           ))}
         </div>
       </div>
-      <div className="overflow-hidden rounded-md border border-line bg-panel">
+      <div className="quiet-shadow overflow-hidden rounded-md border border-line bg-panel">
         <Image
           src="/images/cardiff-academic-rep.png"
           alt="Cardiff University Student Academic Representative certificate for Karan Manoharan"

@@ -1,4 +1,4 @@
-type SectionHeaderProps = {
+﻿type SectionHeaderProps = {
   eyebrow?: string;
   title: string;
   description?: string;

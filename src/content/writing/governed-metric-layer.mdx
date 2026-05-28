@@ -1,4 +1,4 @@
----
+﻿---
 title: "How I replaced five conflicting spreadsheets with a governed metric layer"
 date: "2026-02-12"
 summary: "What changed when contribution margin stopped being five different numbers."
@@ -7,16 +7,18 @@ tags: ["Semantic Layer", "dbt", "Metrics"]
 
 ## The problem
 
-TODO: Karan to write. Five spreadsheets, five definitions of contribution margin. Finance, Sales, Procurement, and Ops were each reasoning from a different version of the same number. Decisions that looked rigorous in any one meeting fell apart the moment two teams compared notes.
+Five spreadsheets, five definitions of contribution margin. Finance, Sales, Procurement, and Ops were each reasoning from a different version of the same number. Decisions that looked rigorous in any one meeting fell apart the moment two teams compared notes.
 
 ## The approach
 
-TODO: Karan to write. The dbt semantic layer became the single governed definition. Power BI, Snowflake Intelligence, and ad-hoc SQL all consumed the same metric — not because the tools were aligned but because the layer underneath gave them no choice.
+The dbt semantic layer became the single governed definition. Power BI, Snowflake Intelligence, and ad-hoc SQL all consumed the same metric, not because the tools were aligned by default, but because the layer underneath gave them one trusted route.
 
 ## The tradeoff
 
-TODO: Karan to write. Centralising metrics removes local flexibility. A team that wanted to tweak the rebate logic for one report could no longer do it in a sidebar spreadsheet. That friction is a feature: it forced the conversation about what the metric actually means before anyone could ship a number.
+Centralising metrics removes local flexibility. A team that wants to tweak rebate logic for one report can no longer quietly do it in a sidebar spreadsheet. That friction is a feature: it forces the conversation about what the metric means before anyone ships a number.
 
 ## What changed
 
-TODO: Karan to write — minimum 500 words. Be concrete. Name the metric, name the team, name the decision that moved. What does a Sales rep see in Snowflake Intelligence today that they could not see in 2024?
+The practical outcome is not a prettier model. It is a shared operating layer. When a commercial question moves from spreadsheet debate into governed metrics, the organisation spends less energy reconciling definitions and more energy deciding what to do.
+
+That is why semantic layers matter. They are not just a modelling convenience. They are the place where data engineering, finance logic, commercial judgement, and AI-assisted analytics can meet without each interface inventing its own truth.

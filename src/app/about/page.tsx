@@ -21,7 +21,7 @@ export default function AboutPage() {
         <SectionHeader
           eyebrow="About"
           title="I build data systems by reducing ambiguity."
-          description="My work sits at the intersection of data platforms, semantic systems, and AI-native analytics — with a principal-mindset across product, data science, data engineering, and AI engineering."
+          description="My work sits at the intersection of data platforms, semantic systems, and AI-native analytics, with a principal-mindset across product, data science, data engineering, and AI engineering."
         />
         <div className="mt-12 space-y-6 text-base leading-7 text-muted">
           <p>

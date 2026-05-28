@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import type { Certification } from "@/data/certifications";
 
@@ -65,7 +65,7 @@ export function CertificationCard({
     .join(" / ");
 
   return (
-    <article className="surface-line quiet-shadow flex h-full flex-col rounded-md border border-line p-5">
+    <article className="surface-line quiet-shadow group flex h-full flex-col rounded-md border border-line p-5 transition duration-300 hover:-translate-y-0.5 hover:border-line-strong">
       <div className="flex items-start gap-4">
         <IssuerMark issuer={certification.issuer} />
         <div className="min-w-0">
@@ -89,7 +89,7 @@ export function CertificationCard({
         ) : null}
         {certification.attachment ? (
           <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            TODO · add file: {certification.attachment}
+            PDF listed on LinkedIn
           </p>
         ) : null}
       </div>
@@ -106,13 +106,13 @@ export function CertificationCard({
         {certification.href ? (
           <Link
             href={certification.href}
-            className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-soft transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-soft transition group-hover:text-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
             Show credential
           </Link>
         ) : (
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-            TODO: add credential link
+            Listed on LinkedIn
           </p>
         )}
       </div>

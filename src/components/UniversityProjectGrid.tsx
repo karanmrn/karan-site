@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import type { UniversityProject } from "@/data/profile";
 
@@ -12,7 +12,7 @@ const visualStyles: Record<UniversityProject["visual"], string> = {
   cloud: "from-sky-300/20 via-accent/10 to-transparent",
   forecasting: "from-accent-warm/25 via-accent-warm-deep/10 to-transparent",
   analytics: "from-emerald-300/20 via-accent/10 to-transparent",
-  scraping: "from-violet-300/20 via-accent-deep/10 to-transparent",
+  scraping: "from-accent-soft/20 via-accent-deep/10 to-transparent",
 };
 
 function ProjectVisual({ visual, title }: Pick<UniversityProject, "visual" | "title">) {
@@ -53,7 +53,7 @@ export function UniversityProjectGrid({
       {visibleProjects.map((project) => (
         <article
           key={project.title}
-          className="flex h-full flex-col rounded-md border border-line bg-panel p-5"
+          className="surface-line quiet-shadow group flex h-full flex-col rounded-md border border-line p-5 transition duration-300 hover:-translate-y-0.5 hover:border-line-strong"
         >
           <ProjectVisual visual={project.visual} title={project.title} />
           <div className="mt-5 flex items-start justify-between gap-4">
@@ -92,13 +92,13 @@ export function UniversityProjectGrid({
             {project.href ? (
               <Link
                 href={project.href}
-                className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-soft transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-soft transition group-hover:text-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
                 View GitHub
               </Link>
             ) : (
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-                TODO: add link
+                Link unavailable
               </p>
             )}
           </div>

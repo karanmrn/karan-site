@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import type { CompanySystem } from "@/data/work";
 
 type CompanyVisualProps = {
@@ -7,7 +7,7 @@ type CompanyVisualProps = {
 
 export function CompanyVisual({ visual }: CompanyVisualProps) {
   return (
-    <div className="mt-6 rounded-md border border-line bg-background/40 p-4">
+    <div className="mt-6 rounded-md border border-line bg-background/45 p-4">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         {visual.logo ? (
           <div className="relative flex min-h-16 w-full max-w-56 items-center rounded border border-line bg-white px-4 py-3">
@@ -30,7 +30,7 @@ export function CompanyVisual({ visual }: CompanyVisualProps) {
         {visual.products.map((product) => (
           <article
             key={product.name}
-            className={`rounded border border-line bg-panel p-4 ${product.accent ?? ""}`}
+            className={`rounded border border-line bg-panel/85 p-4 transition duration-300 hover:border-line-strong hover:bg-panel ${product.accent ?? ""}`}
           >
             <div className="relative flex h-16 items-center justify-center rounded bg-white/95 p-3">
               {product.image ? (

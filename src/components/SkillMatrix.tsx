@@ -1,4 +1,4 @@
-import { Badge } from "@/components/Badge";
+﻿import { Badge } from "@/components/Badge";
 import type { SkillGroup, SoftSkill } from "@/data/profile";
 
 type SkillMatrixProps = {
@@ -9,7 +9,7 @@ type SkillMatrixProps = {
 export function SkillMatrix({ hardSkills, softSkills }: SkillMatrixProps) {
   return (
     <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
-      <aside className="rounded-md border border-line bg-panel p-5">
+      <aside className="surface-line quiet-shadow rounded-md border border-line p-5">
         <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent-warm">
           § soft skills
         </p>
@@ -24,7 +24,7 @@ export function SkillMatrix({ hardSkills, softSkills }: SkillMatrixProps) {
           ))}
         </div>
         <div className="mt-6 space-y-4 border-t border-line pt-5">
-          {softSkills.slice(0, 4).map((skill) => (
+          {softSkills.map((skill) => (
             <div key={skill.name}>
               <h3 className="font-display text-base leading-tight text-foreground">
                 {skill.name}

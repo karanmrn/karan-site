@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import { Container } from "@/components/Container";

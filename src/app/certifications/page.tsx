@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CertificationCard } from "@/components/CertificationCard";
 import { Container } from "@/components/Container";
 import { SectionHeader } from "@/components/SectionHeader";

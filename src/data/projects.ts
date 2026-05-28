@@ -1,4 +1,4 @@
-export type CaseStudySection = {
+﻿export type CaseStudySection = {
   title: string;
   body: string[];
 };
@@ -167,13 +167,6 @@ export const projects: Project[] = [
           "The more ambiguous the business problem, the more valuable it is to make lineage, ownership, and definitions visible early.",
         ],
       },
-      {
-        title: "What failed",
-        body: [
-          "TODO: Karan to write 2-3 sentences on what specifically broke during the lakehouse build, how you caught it, and what you changed as a result.",
-          "Format: 'The initial [decision/schema/assumption] did not account for [problem]. This caused [consequence] in [timeframe]. We fixed it by [solution], which [tradeoff].'",
-        ],
-      },
     ],
   },
   {
@@ -293,13 +286,6 @@ export const projects: Project[] = [
           "Metrics shape behaviour. If definitions are unclear, teams will optimise locally; if the trusted path is clear, incentives start to align.",
         ],
       },
-      {
-        title: "What failed",
-        body: [
-          "TODO: Karan to write 2-3 sentences on what failed in the semantic layer rollout — a metric definition that broke under scrutiny, a stakeholder buy-in failure, or an early modelling choice you had to undo.",
-          "Format: 'The initial [decision/definition/assumption] did not account for [problem]. This caused [consequence] in [timeframe]. We fixed it by [solution], which [tradeoff].'",
-        ],
-      },
     ],
   },
   {
@@ -396,13 +382,6 @@ export const projects: Project[] = [
         body: [
           "Streaming ML data platforms need reliability practices as much as throughput: quality gates, auditability, and clear engineering standards keep downstream models usable.",
           "The best operational fix was not one clever pipeline change; it was changing the delivery system around the pipelines.",
-        ],
-      },
-      {
-        title: "What failed",
-        body: [
-          "TODO: Karan to write 2-3 sentences on what failed in the streaming work — a quality gate that let bad data through, an incident that exposed a blind spot, or a delivery process that didn't survive contact with production.",
-          "Format: 'The initial [decision/check/assumption] did not account for [problem]. This caused [consequence] in [timeframe]. We fixed it by [solution], which [tradeoff].'",
         ],
       },
     ],
