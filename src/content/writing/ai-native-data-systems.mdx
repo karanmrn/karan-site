@@ -1,7 +1,7 @@
 ---
 title: "AI-native data systems"
-date: "TODO: confirm date"
-summary: "A stub note on how data engineering foundations shape practical AI systems."
+date: "2026-01-15"
+summary: "A working note on how data engineering foundations shape practical AI systems."
 tags: ["Data Engineering", "AI Systems", "LLMs"]
 ---
 
@@ -11,9 +11,15 @@ AI-native data systems still depend on familiar data engineering fundamentals:
 clear contracts, reliable transformations, governed access, and observable
 failure modes.
 
-## Notes to expand
+## Why this matters
 
-- TODO: add examples from Snowflake or lakehouse work.
-- TODO: add a concrete LLM workflow.
-- TODO: add an architecture diagram or link.
-- TODO: add references.
+The useful AI layer depends on the system beneath it. If metrics are
+inconsistent, access rules are unclear, or lineage is invisible, an AI interface
+mostly makes ambiguity faster.
+
+My bias is to treat AI systems as a new surface area on top of familiar
+engineering fundamentals: source data, contracts, transformations, semantic
+definitions, evaluation, and feedback loops.
+
+That is less dramatic than treating every workflow as an agent problem, but it
+is usually more useful.

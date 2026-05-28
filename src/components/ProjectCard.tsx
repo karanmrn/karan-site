@@ -16,8 +16,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <p className="max-w-[14rem] text-xs uppercase tracking-[0.18em] text-accent-soft">
           {project.focus}
         </p>
-        <span aria-hidden="true" className="text-muted transition group-hover:translate-x-1 group-hover:text-foreground">
-          →
+        <span
+          aria-hidden="true"
+          className="text-muted transition group-hover:translate-x-1 group-hover:text-foreground"
+        >
+          -&gt;
         </span>
       </div>
       <h3 className="mt-10 text-2xl font-semibold leading-tight text-foreground">

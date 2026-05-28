@@ -26,7 +26,7 @@ export function Button({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-11 items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition ${variants[variant]} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${variants[variant]} ${className}`}
       {...props}
     >
       {children}

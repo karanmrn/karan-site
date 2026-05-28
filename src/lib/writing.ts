@@ -46,9 +46,9 @@ function parseFrontmatter(source: string) {
   }
 
   const frontmatter: WritingFrontmatter = {
-    title: String(data.title ?? "TODO: confirm title"),
-    date: String(data.date ?? "TODO: confirm date"),
-    summary: String(data.summary ?? "TODO: confirm summary"),
+    title: String(data.title ?? "Untitled"),
+    date: String(data.date ?? "Draft"),
+    summary: String(data.summary ?? ""),
     tags: Array.isArray(data.tags) ? data.tags : [],
   };
 
