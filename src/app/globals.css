@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07080a;
+  --foreground: #f3f0e8;
+  --muted: #a8aaa3;
+  --panel: #101216;
+  --panel-soft: #151820;
+  --line: #252932;
+  --accent: #9fb8c7;
+  --accent-soft: #c0d4df;
+  --ink: #071014;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-panel: var(--panel);
+  --color-panel-soft: var(--panel-soft);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(159, 184, 199, 0.06), transparent 340px),
+    var(--background);
+  color: var(--foreground);
+  font-family:
+    Geist,
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(159, 184, 199, 0.28);
+  color: var(--foreground);
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.prose-matter h2 {
+  margin-top: 2.5rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.prose-matter p {
+  margin-top: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.prose-matter ul {
+  margin-top: 1rem;
+  list-style: disc;
+  padding-left: 1.25rem;
+  color: var(--muted);
+}
+
+.prose-matter li + li {
+  margin-top: 0.5rem;
+}
+
+.prose-matter strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
