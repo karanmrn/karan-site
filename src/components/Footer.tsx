@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { site } from "@/lib/site";
 
 const links = [
-  { href: "mailto:TODO:add-email", label: "Email", aria: "Email Karan" },
-  { href: "https://www.linkedin.com/in/TODO-add-link", label: "LinkedIn", aria: "Karan on LinkedIn" },
-  { href: "https://github.com/TODO-add-link", label: "GitHub", aria: "Karan on GitHub" },
+  { href: `mailto:${site.email}`, label: "Email", aria: "Email Karan" },
+  { href: site.linkedin, label: "LinkedIn", aria: "Karan on LinkedIn" },
+  { href: site.github, label: "GitHub", aria: "Karan on GitHub" },
 ];
 
 export function Footer() {
@@ -15,7 +16,7 @@ export function Footer() {
         className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
       >
         <p className="text-sm text-muted">
-          Senior Data Engineer building AI-native data systems.
+          Senior Data Engineer building at the intersection of data platforms and AI systems.
         </p>
         <nav aria-label="Footer links">
           <ul className="flex flex-wrap gap-4">

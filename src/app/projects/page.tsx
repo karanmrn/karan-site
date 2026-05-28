@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Case studies across Snowflake, lakehouse architecture, document AI, natural-language analytics, and agent infrastructure.",
+    "Case studies across Snowflake Iceberg lakehouses, semantic metrics, self-serve analytics, Databricks streaming, London rental intelligence, and AI systems.",
 };
 
 export default function ProjectsPage() {
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
         <SectionHeader
           eyebrow="Projects"
           title="Selected systems and case studies."
-          description="A portfolio weighted toward data engineering depth, with practical AI systems work layered on top."
+          description="Work weighted toward data platform credibility, with practical AI systems layered on governed metrics, reliable pipelines, and decision workflows."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {projects.map((project) => (

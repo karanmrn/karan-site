@@ -4,11 +4,15 @@
   --background: #07080a;
   --foreground: #f3f0e8;
   --muted: #a8aaa3;
+  --muted-strong: #c9c9c2;
   --panel: #101216;
   --panel-soft: #151820;
+  --panel-raised: #181c22;
   --line: #252932;
+  --line-strong: #343a45;
   --accent: #9fb8c7;
   --accent-soft: #c0d4df;
+  --accent-deep: #607b8a;
   --ink: #071014;
 }
 
@@ -16,11 +20,15 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
+  --color-muted-strong: var(--muted-strong);
   --color-panel: var(--panel);
   --color-panel-soft: var(--panel-soft);
+  --color-panel-raised: var(--panel-raised);
   --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-accent-deep: var(--accent-deep);
   --color-ink: var(--ink);
 }
 
@@ -37,7 +45,8 @@ html {
 body {
   min-height: 100vh;
   background:
-    linear-gradient(180deg, rgba(159, 184, 199, 0.06), transparent 340px),
+    radial-gradient(circle at 72% 0%, rgba(159, 184, 199, 0.12), transparent 30rem),
+    linear-gradient(180deg, rgba(159, 184, 199, 0.05), transparent 26rem),
     var(--background);
   color: var(--foreground);
   font-family:
@@ -51,6 +60,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+body::before {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background-image:
+    linear-gradient(rgba(243, 240, 232, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 240, 232, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
 }
 
 ::selection {
@@ -90,4 +112,17 @@ a {
 .prose-matter strong {
   color: var(--foreground);
   font-weight: 600;
+}
+
+.surface-line {
+  background:
+    linear-gradient(135deg, rgba(243, 240, 232, 0.065), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent),
+    var(--panel);
+}
+
+.quiet-shadow {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 24px 80px rgba(0, 0, 0, 0.22);
 }

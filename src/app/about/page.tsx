@@ -6,16 +6,16 @@ import { SectionHeader } from "@/components/SectionHeader";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Karan, a Senior Data Engineer moving into practical AI Systems Engineering.",
+    "About Karan Manoharan, a Senior Data Engineer building at the intersection of data platforms and AI systems.",
 };
 
 const strengths = [
-  "Snowflake and lakehouse architecture",
-  "Analytics platform design",
-  "Data modeling and governance",
-  "LLM workflow design",
-  "MCP and agent experiments",
-  "AI infrastructure evaluation",
+  "Snowflake Iceberg lakehouses",
+  "dbt semantic layers",
+  "Databricks streaming pipelines",
+  "Experimentation datasets",
+  "Snowflake Intelligence and Cortex",
+  "RAG, MCP, and vector databases",
 ];
 
 export default function AboutPage() {
@@ -24,22 +24,38 @@ export default function AboutPage() {
       <Container>
         <SectionHeader
           eyebrow="About"
-          title="A data systems foundation with an AI systems trajectory."
-          description="Karan is positioned as a Senior Data Engineer with deep platform experience and a practical, systems-first move into AI engineering."
+          title="I build data systems by reducing ambiguity."
+          description="My work sits at the intersection of data platforms, semantic systems, and AI-native analytics."
         />
         <div className="mt-12 space-y-6 text-base leading-7 text-muted">
           <p>
-            The strongest through-line is data engineering: Snowflake,
-            lakehouse patterns, analytics infrastructure, and the operating
-            discipline needed to keep data products understandable.
+            I build data platforms with one core belief: elegant simplicity
+            beats complex perfection. Most data problems are not solved by
+            adding more layers. They are solved by understanding the incentives,
+            constraints, and failure modes around the system.
           </p>
           <p>
-            The AI layer builds from that foundation. Rather than presenting AI
-            as a separate identity, this portfolio frames it as the next system
-            surface: LLM workflows, semantic interfaces, experimentation, and
-            agent tooling that depend on reliable data and clear boundaries.
+            My operating style is first-principles and systems-oriented. I try
+            to separate signal from noise, map the real decision being made,
+            and build the smallest reliable structure that lets people act with
+            more confidence.
           </p>
-          <p>TODO: add personal background, location preference, and contact details.</p>
+          <p>
+            Game theory shows up more often than people expect in data work:
+            teams optimise for the metrics and workflows available to them. A
+            good platform changes those incentives by making the trusted path
+            easier than the improvised one.
+          </p>
+          <p>
+            I work across Snowflake, Databricks, dbt, Kafka, Spark, Power BI,
+            and practical AI tooling such as Snowflake Intelligence, Cortex,
+            RAG pipelines, MCP, and vector databases. The through-line is not
+            the toolset. It is building systems that make better decisions more
+            likely.
+          </p>
+          <p>
+            I am based in the United Kingdom.
+          </p>
         </div>
         <div className="mt-10 flex flex-wrap gap-2">
           {strengths.map((strength) => (

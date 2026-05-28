@@ -38,11 +38,16 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
           {project.sections.map((section) => (
             <section
               key={section.title}
-              className="grid gap-5 border-b border-line py-10 md:grid-cols-[220px_1fr]"
+              className="grid gap-5 border-b border-line py-10 md:grid-cols-[240px_1fr]"
             >
-              <h2 className="text-lg font-semibold text-foreground">
-                {section.title}
-              </h2>
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-accent-soft">
+                  Case note
+                </p>
+                <h2 className="mt-3 text-xl font-semibold text-foreground">
+                  {section.title}
+                </h2>
+              </div>
               <div className="space-y-4 text-base leading-7 text-muted">
                 {section.body.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>

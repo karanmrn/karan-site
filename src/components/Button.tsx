@@ -16,7 +16,7 @@ export function Button({
 }: ButtonProps) {
   const variants = {
     primary:
-      "border-accent/70 bg-accent text-ink hover:border-accent-soft hover:bg-accent-soft",
+      "border-accent/70 bg-accent text-ink shadow-[0_0_32px_rgba(159,184,199,0.12)] hover:border-accent-soft hover:bg-accent-soft",
     secondary:
       "border-line bg-panel text-foreground hover:border-muted hover:bg-panel-soft",
     ghost:
