@@ -18,7 +18,7 @@ export default function NotFound() {
           href="/"
           className="mt-8 inline-flex text-sm text-muted transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
         >
-          &lt;- Back home
+          ← Back home
         </Link>
       </Container>
     </main>

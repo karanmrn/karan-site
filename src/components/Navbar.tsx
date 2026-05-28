@@ -6,6 +6,7 @@ import { Container } from "@/components/Container";
 
 const navItems = [
   { href: "/projects", label: "Work" },
+  { href: "/certifications", label: "Certs" },
   { href: "/writing", label: "Writing" },
   { href: "/about", label: "About" },
   { href: "/resume", label: "Resume" },

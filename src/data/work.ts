@@ -8,6 +8,19 @@ export type CompanySystem = {
   influence: string;
   impact: string[];
   tags: string[];
+  visual?: {
+    logo?: {
+      src: string;
+      alt: string;
+    };
+    caption: string;
+    products: {
+      name: string;
+      context: string;
+      image?: string;
+      accent?: string;
+    }[];
+  };
 };
 
 export type PersonalSystem = {
@@ -37,18 +50,63 @@ export const companySystems: CompanySystem[] = [
     dates: "November 2024 - Present",
     location: "Blackburn, United Kingdom",
     summary:
-      "Flagship data-platform work across Snowflake Iceberg, semantic metrics, self-serve analytics, and commercial decision systems.",
+      "Lead technical voice on the platform rebuild: Snowflake Iceberg medallion lakehouse, governed semantic metrics, Cortex-native AI analytics, and unit-economics decision systems across 1,389 retail outlets.",
     architecture:
-      "Snowflake Iceberg lakehouse, governed dbt semantic layer, Power BI, Snowflake Intelligence, and ad-hoc SQL serving Finance, Sales, Procurement, and Operations.",
+      "Snowflake Iceberg medallion lakehouse with pre-aggregated gold models and dbt semantic layer feeding Power BI, Snowflake Intelligence, Cortex Search, Cortex Analyst, Cortex Agent, and Streamlit-in-Snowflake apps for Finance, Sales, Procurement, and Operations.",
     influence:
-      "Defined the two-year data platform roadmap, consolidated competing spreadsheet logic into governed metrics, and shaped reusable deployment and validation patterns.",
+      "Re-engineered 200+ ELT pipelines with observability and governance, shaped Cortex-native AI access on top of the trusted semantic layer, and mentored analysts on CI/CD and dbt testing standards.",
     impact: [
-      "Unified commercial data across 1,389 outlets.",
-      "Contribution-margin and unit-economics work contributed to GBP 2.2M revenue growth and 15% commercial uplift.",
-      "Self-serve analytics recovered 40+ analyst hours per month for 10+ Finance, Sales, and Ops stakeholders.",
-      "Reusable deployment and validation patterns cut pipeline deployment from 3 days to under 2 hours.",
+      "GBP 2.2M revenue growth (15%) and 5% trade-spend reduction across 1,389 retail outlets.",
+      "Operational waste down 8% and forecast accuracy up 25% through the unit-economics framework.",
+      "Power BI dashboard refresh from 30 minutes to under 1 minute via pre-aggregated gold models.",
+      "Re-engineered 200+ ELT pipelines, eliminating 90% of failures.",
+      "Cortex Search, Analyst, and Agent integrations gave Finance and Sales natural-language access to governed metrics.",
+      "Streamlit-in-Snowflake apps replaced ad-hoc spreadsheet reviews for margin and rebate inspection.",
     ],
-    tags: ["Snowflake", "Iceberg", "dbt", "Power BI", "Snowflake Intelligence"],
+    tags: [
+      "Snowflake",
+      "Iceberg",
+      "dbt",
+      "Cortex Search",
+      "Cortex Analyst",
+      "Cortex Agent",
+      "Streamlit",
+      "Snowflake Intelligence",
+    ],
+    visual: {
+      logo: {
+        src: "https://www.petschoice.co.uk/wp-content/themes/petschoice/assets/images/logo.png",
+        alt: "Pets Choice logo",
+      },
+      caption:
+        "The platform supports commercial questions across real consumer-product brands, not abstract demo data.",
+      products: [
+        {
+          name: "Webbox",
+          context: "Sales, customer, brand and SKU performance",
+          image:
+            "https://www.petschoice.co.uk/wp-content/uploads/2024/06/logo-webbox-new.png",
+        },
+        {
+          name: "Bob Martin",
+          context: "Finance, COGS, royalties and product-division logic",
+          image:
+            "https://www.petschoice.co.uk/wp-content/uploads/2024/06/logo-bobmartin.png",
+        },
+        {
+          name: "TastyBone",
+          context: "Brand-level revenue, margin and trade-spend analysis",
+          image:
+            "https://www.petschoice.co.uk/wp-content/uploads/2024/06/logo-tastybone.png",
+        },
+        {
+          name: "Felight",
+          context: "Product, channel and customer reporting surfaces",
+          image:
+            "https://www.petschoice.co.uk/wp-content/uploads/2024/06/logo-felight.png",
+        },
+      ],
+    },
   },
   {
     company: "Tenacium DC",
@@ -56,17 +114,18 @@ export const companySystems: CompanySystem[] = [
     dates: "July 2023 - October 2024",
     location: "London, United Kingdom",
     summary:
-      "Streaming lakehouse and reliability work supporting feature and reporting datasets for production ML models.",
+      "Greenfield Databricks Lakehouse platform ingesting 50M+ daily events for downstream ML, with hard reliability practices and a 4-person analytics team behind it.",
     architecture:
-      "Databricks Lakehouse pipelines processing 50M+ daily events via Kafka and Spark Structured Streaming, with Great Expectations and Write-Audit-Publish quality gates.",
+      "Databricks Lakehouse on Delta Lake with Kafka pub-sub and Spark Structured Streaming for micro-batch and real-time processing, Z-Ordering and Bin-packing for query performance, and Great Expectations + Write-Audit-Publish gates around critical pipelines.",
     influence:
-      "Led a 4-person analytics team from reactive firefighting toward structured delivery through architecture reviews and engineering standards.",
+      "Led technical direction for a 4-person analytics team — architecture reviews, code-quality standards, and engineering practices that moved delivery from reactive firefighting to structured shipping.",
     impact: [
-      "Improved throughput by 40% and reduced production bugs by 60%.",
-      "Cut data quality incidents from 80 to under 10 per month.",
-      "Created reliable feature and reporting datasets for 3 production ML models.",
+      "Improved team delivery by 40% and reduced production bugs by 60%.",
+      "Reduced query latency by 40% via Z-Ordering, Bin-packing, and partition pruning.",
+      "Cut data quality incidents to under 10 per month.",
+      "Built reliable feature and reporting datasets supporting downstream ML models.",
     ],
-    tags: ["Databricks", "Kafka", "Spark Streaming", "Great Expectations"],
+    tags: ["Databricks", "Delta Lake", "Kafka", "Spark Streaming", "Great Expectations"],
   },
   {
     company: "Everest",
@@ -74,17 +133,17 @@ export const companySystems: CompanySystem[] = [
     dates: "February 2020 - August 2022",
     location: "Chennai, India",
     summary:
-      "Product analytics and experimentation data work across funnels, cohorts, activation, retention, and conversion.",
+      "Lakehouse migration and performance engineering — moving legacy ETL onto Databricks Medallion with measurable compute savings.",
     architecture:
-      "Customer funnel, cohort, and experiment-analysis datasets standardising exposure, conversion, and retention logic for product and marketing analysis.",
+      "Idempotent PySpark pipelines on Databricks Medallion architecture ingesting 10GB daily from Postgres OLTP, Google Analytics, MongoDB, and external APIs.",
     influence:
-      "Turned behavioural event data into reusable datasets that made product and marketing experimentation easier to analyse consistently.",
+      "Tuned Spark jobs through DAG analysis, broadcast joins for dimension lookups, and shuffle-partition optimisation.",
     impact: [
-      "Built activation, retention, and conversion datasets across 50k+ users.",
-      "Contributed to a 25% conversion rate increase through reliable behavioural datasets.",
-      "Reduced experiment analysis turnaround from weeks to days.",
+      "Migrated legacy ETL to a Databricks Lakehouse Medallion architecture.",
+      "Ingested 10GB daily across 5+ source systems.",
+      "Reduced compute costs by $10,000 annually through Spark optimisation.",
     ],
-    tags: ["Product Analytics", "Experimentation", "Cohorts", "A/B Testing"],
+    tags: ["Databricks", "PySpark", "Medallion", "Spark Optimisation"],
   },
   {
     company: "Orkash Services",
@@ -92,16 +151,16 @@ export const companySystems: CompanySystem[] = [
     dates: "August 2018 - January 2020",
     location: "Delhi, India",
     summary:
-      "Dimensional modelling and commercial reporting foundation work.",
+      "Pipeline orchestration and dimensional modelling foundation work — Airflow, cron, and Kimball star schemas at scale.",
     architecture:
-      "Kimball star-schema models over 100GB daily reporting pipelines for commercial reporting workflows.",
+      "Kimball star-schema models over 100GB daily data volumes with scalable pipelines orchestrated via Airflow and cron jobs.",
     influence:
       "Built the modelling foundation that made daily reporting faster and more usable for analysts.",
     impact: [
-      "Cut report generation time by 60%.",
-      "Enabled weekly commercial decisions for 15 analysts.",
+      "Managed 100GB daily data volumes with reliable orchestration.",
+      "Improved query response time by 20% through optimised dimensional models.",
     ],
-    tags: ["Kimball", "Star Schema", "SQL", "Reporting"],
+    tags: ["Kimball", "Star Schema", "Airflow", "SQL"],
   },
 ];
 

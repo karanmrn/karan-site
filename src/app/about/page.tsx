@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import { Badge } from "@/components/Badge";
+import Link from "next/link";
+import { AcademicProof } from "@/components/AcademicProof";
 import { Container } from "@/components/Container";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SkillMatrix } from "@/components/SkillMatrix";
+import { certifications } from "@/data/certifications";
+import { hardSkillGroups, softSkills } from "@/data/profile";
 import { characterNotes } from "@/data/work";
 
 export const metadata: Metadata = {
@@ -10,15 +14,6 @@ export const metadata: Metadata = {
     "About Karan Manoharan, a Senior Data Engineer building at the intersection of data platforms and AI systems.",
 };
 
-const strengths = [
-  "Snowflake Iceberg lakehouses",
-  "dbt semantic layers",
-  "Databricks streaming pipelines",
-  "Experimentation datasets",
-  "Snowflake Intelligence and Cortex",
-  "RAG, MCP, and vector databases",
-];
-
 export default function AboutPage() {
   return (
     <main className="py-16 sm:py-24">
@@ -26,7 +21,7 @@ export default function AboutPage() {
         <SectionHeader
           eyebrow="About"
           title="I build data systems by reducing ambiguity."
-          description="My work sits at the intersection of data platforms, semantic systems, and AI-native analytics."
+          description="My work sits at the intersection of data platforms, semantic systems, and AI-native analytics — with a principal-mindset across product, data science, data engineering, and AI engineering."
         />
         <div className="mt-12 space-y-6 text-base leading-7 text-muted">
           <p>
@@ -54,15 +49,40 @@ export default function AboutPage() {
             the toolset. It is building systems that make better decisions more
             likely.
           </p>
-          <p>
-            I am based in the United Kingdom.
-          </p>
+          <p>I am based in the United Kingdom.</p>
         </div>
-        <div className="mt-10 flex flex-wrap gap-2">
-          {strengths.map((strength) => (
-            <Badge key={strength}>{strength}</Badge>
-          ))}
-        </div>
+
+        <section className="mt-16 border-t border-line pt-10">
+          <SectionHeader
+            eyebrow="Skills"
+            title="The practical stack and the human operating system."
+            description="Hard skills get the system built. Soft skills get the right system built with the right people."
+          />
+          <div className="mt-8">
+            <SkillMatrix hardSkills={hardSkillGroups} softSkills={softSkills} />
+          </div>
+          <div className="mt-8 flex flex-col gap-3 rounded-md border border-line bg-panel p-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent-warm">
+                § credentials
+              </p>
+              <p className="font-display mt-2 text-xl leading-tight text-foreground">
+                {certifications.length} certifications across dbt, Snowflake,
+                SQL, cloud, Python, and BI.
+              </p>
+            </div>
+            <Link
+              href="/certifications"
+              className="font-mono inline-flex whitespace-nowrap text-[11px] uppercase tracking-[0.22em] text-accent-soft transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            >
+              View the archive →
+            </Link>
+          </div>
+        </section>
+
+        <section className="mt-16 border-t border-line pt-10">
+          <AcademicProof />
+        </section>
 
         <section className="mt-16 border-t border-line pt-10">
           <SectionHeader

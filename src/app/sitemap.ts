@@ -5,12 +5,17 @@ import { getWritingPosts } from "@/lib/writing";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const staticRoutes = ["", "/projects", "/writing", "/about", "/resume"].map(
-    (route) => ({
-      url: `${site.url}${route}`,
-      lastModified: now,
-    }),
-  );
+  const staticRoutes = [
+    "",
+    "/projects",
+    "/certifications",
+    "/writing",
+    "/about",
+    "/resume",
+  ].map((route) => ({
+    url: `${site.url}${route}`,
+    lastModified: now,
+  }));
   const projectRoutes = projects.map((project) => ({
     url: `${site.url}/projects/${project.slug}`,
     lastModified: now,

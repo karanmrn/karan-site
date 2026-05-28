@@ -3,6 +3,35 @@ export type CaseStudySection = {
   body: string[];
 };
 
+export type ArchitectureStep = {
+  label: string;
+  detail: string;
+};
+
+export type ArchitectureDiagram = {
+  title: string;
+  note: string;
+  steps: ArchitectureStep[];
+};
+
+export type EvidenceImage = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+export type EvidenceGallery = {
+  title: string;
+  note: string;
+  images: EvidenceImage[];
+};
+
+export type ProjectState =
+  | "SHIPPED · PRODUCTION"
+  | "IN PROGRESS"
+  | "PERSONAL"
+  | "LAB";
+
 export type Project = {
   slug: string;
   title: string;
@@ -10,6 +39,9 @@ export type Project = {
   focus: string;
   tags: string[];
   status: string;
+  state?: ProjectState;
+  architecture?: ArchitectureDiagram;
+  evidence?: EvidenceGallery;
   sections: CaseStudySection[];
 };
 
@@ -22,6 +54,69 @@ export const projects: Project[] = [
     focus: "Pets Choice / Senior Data Engineer",
     tags: ["Snowflake", "Iceberg", "Lakehouse", "Commercial Data"],
     status: "November 2024 - Present",
+    state: "SHIPPED · PRODUCTION",
+    architecture: {
+      title: "What I built",
+      note: "Production commercial data platform moving Business Central and operational data into Snowflake, modelled through dbt, and exposed to BI, Streamlit apps, SQL users, and Snowflake Intelligence / Cortex agents.",
+      steps: [
+        {
+          label: "Production sources",
+          detail:
+            "Business Central / NAV SQL Server tables, finance cubes, customer, sales, item, warehouse, purchase, vendor, rebate, budget, and forecast data.",
+        },
+        {
+          label: "Export layer",
+          detail:
+            "SQL Server parquet-export views normalised source table and column shapes so downstream ingestion did not depend directly on fragile production schemas.",
+        },
+        {
+          label: "Ingestion",
+          detail:
+            "Azure Data Factory pipelines loaded daily parquet extracts into ADLS Gen2 containers, with previous runs moved into archive folders for file-level history.",
+        },
+        {
+          label: "Lakehouse storage",
+          detail:
+            "Snowflake external volumes and PETSCHOICE_LAKEHOUSE_DB bronze tables, including Iceberg tables for customer, item, sales, purchase, vendor, warehouse, and finance domains.",
+        },
+        {
+          label: "Transformation",
+          detail:
+            "dbt split intermediate models into silver and marts into gold, covering sales, finance, items, customers, inventory, outstanding orders, shorting, budget, and forecast models.",
+        },
+        {
+          label: "Consumption",
+          detail:
+            "Gold facts, semantic views, Power BI, Streamlit in Snowflake apps, ad-hoc SQL, and Snowflake Cortex / Intelligence agents for Finance, Sales, Procurement, and Operations.",
+        },
+        {
+          label: "Controls",
+          detail:
+            "dbt tests, dynamic tables, Snowflake tasks, grants, alerting scripts, and role-based access kept refresh, quality, and access patterns explicit.",
+        },
+      ],
+    },
+    evidence: {
+      title: "Platform evidence",
+      note: "Public repository screenshots and brand context make the work feel tangible without exposing internal dashboards or sensitive data.",
+      images: [
+        {
+          src: "https://github.com/user-attachments/assets/0ff562b8-6cbe-4ece-8bb7-42ff26db5ff5",
+          alt: "Snowflake data platform repository screenshot",
+          caption: "Snowflake platform repository evidence",
+        },
+        {
+          src: "https://github.com/user-attachments/assets/1ca2430a-1f20-428a-bfe4-051846303eb9",
+          alt: "Azure portal resources for Pets Choice data platform",
+          caption: "Azure resources behind the ingestion layer",
+        },
+        {
+          src: "https://github.com/user-attachments/assets/13781164-ba03-463c-9668-8bcded488828",
+          alt: "Azure Data Lake Gen2 containers for Pets Choice data platform",
+          caption: "ADLS Gen2 containers for parquet landing zones",
+        },
+      ],
+    },
     sections: [
       {
         title: "Problem",
@@ -42,13 +137,6 @@ export const projects: Project[] = [
         body: [
           "The confirmed scope was a Snowflake Iceberg lakehouse across 1,389 outlets, spanning Finance, Sales, Procurement, and Operations data.",
           "The platform had to support commercial questions without creating another disconnected reporting layer.",
-        ],
-      },
-      {
-        title: "Architecture",
-        body: [
-          "At a high level, the system brought commercial source data into a Snowflake Iceberg lakehouse, where it could be modelled into trusted analytical views for business teams.",
-          "The platform served as the foundation for rebate leakage analysis, trade spend inspection, margin opportunity discovery, and later semantic analytics work.",
         ],
       },
       {
@@ -79,6 +167,13 @@ export const projects: Project[] = [
           "The more ambiguous the business problem, the more valuable it is to make lineage, ownership, and definitions visible early.",
         ],
       },
+      {
+        title: "What failed",
+        body: [
+          "TODO: Karan to write 2-3 sentences on what specifically broke during the lakehouse build, how you caught it, and what you changed as a result.",
+          "Format: 'The initial [decision/schema/assumption] did not account for [problem]. This caused [consequence] in [timeframe]. We fixed it by [solution], which [tradeoff].'",
+        ],
+      },
     ],
   },
   {
@@ -89,6 +184,64 @@ export const projects: Project[] = [
     focus: "Pets Choice / Senior Data Engineer",
     tags: ["dbt", "Semantic Layer", "Power BI", "Unit Economics"],
     status: "November 2024 - Present",
+    state: "SHIPPED · PRODUCTION",
+    architecture: {
+      title: "Metric operating layer",
+      note: "Governed metric layer built on top of the Snowflake lakehouse so Finance, Sales, Power BI, SQL users, and Snowflake Intelligence reasoned from the same commercial definitions.",
+      steps: [
+        {
+          label: "Trusted facts",
+          detail:
+            "Gold finance and sales models consolidated actuals, budget, forecast, outstanding orders, rebates, COGS, trade spend, net sales, gross margin, and case-volume logic.",
+        },
+        {
+          label: "Dimensions",
+          detail:
+            "Customer, item, product, channel, ASM, class, calendar, brand, site, species, and product-division dimensions gave the metrics consistent slicing rules.",
+        },
+        {
+          label: "Semantic layer",
+          detail:
+            "dbt and Snowflake semantic views defined Finance Performance, Sales Transactions, Budget Analysis, Customer Analytics, Inventory OOD, Outstanding Orders, and Production Shorting.",
+        },
+        {
+          label: "AI interface",
+          detail:
+            "Cortex Analyst and Snowflake Agents translated natural-language questions into governed metric queries instead of letting each interface invent its own business logic.",
+        },
+        {
+          label: "Consumption",
+          detail:
+            "Power BI, Snowflake Intelligence, Streamlit apps, and ad-hoc SQL all pointed back to the same governed definitions for commercial analysis.",
+        },
+        {
+          label: "Governance",
+          detail:
+            "Role grants, semantic-view ownership, dbt tests, and scheduled dbt tasks made the trusted path repeatable across Finance, Sales, and Operations.",
+        },
+      ],
+    },
+    evidence: {
+      title: "Commercial metric surface",
+      note: "The system turns product, customer, finance, rebate, and forecast data into a governed decision layer for commercial teams.",
+      images: [
+        {
+          src: "https://www.petschoice.co.uk/wp-content/uploads/2024/06/logo-webbox-new.png",
+          alt: "Webbox brand logo",
+          caption: "Product and customer metrics across retail brands",
+        },
+        {
+          src: "https://www.petschoice.co.uk/wp-content/uploads/2024/06/logo-bobmartin.png",
+          alt: "Bob Martin brand logo",
+          caption: "Finance and margin reporting for product divisions",
+        },
+        {
+          src: "https://www.petschoice.co.uk/wp-content/uploads/2024/06/logo-tastybone.png",
+          alt: "TastyBone brand logo",
+          caption: "Brand and SKU-level performance analysis",
+        },
+      ],
+    },
     sections: [
       {
         title: "Problem",
@@ -109,13 +262,6 @@ export const projects: Project[] = [
         body: [
           "The metric layer needed to preserve a single governed definition while serving different consumption paths for stakeholders and analysts.",
           "It had to be trustworthy enough for Finance, usable enough for Sales, and flexible enough for ad-hoc analysis.",
-        ],
-      },
-      {
-        title: "Architecture",
-        body: [
-          "The system centred on a dbt semantic layer that powered Power BI, Snowflake Intelligence, and ad-hoc SQL.",
-          "The contribution-margin and unit-economics framework sat on top of governed commercial definitions so teams could reason from the same metrics rather than competing spreadsheets.",
         ],
       },
       {
@@ -147,6 +293,13 @@ export const projects: Project[] = [
           "Metrics shape behaviour. If definitions are unclear, teams will optimise locally; if the trusted path is clear, incentives start to align.",
         ],
       },
+      {
+        title: "What failed",
+        body: [
+          "TODO: Karan to write 2-3 sentences on what failed in the semantic layer rollout — a metric definition that broke under scrutiny, a stakeholder buy-in failure, or an early modelling choice you had to undo.",
+          "Format: 'The initial [decision/definition/assumption] did not account for [problem]. This caused [consequence] in [timeframe]. We fixed it by [solution], which [tradeoff].'",
+        ],
+      },
     ],
   },
   {
@@ -157,6 +310,43 @@ export const projects: Project[] = [
     focus: "Tenacium DC / Data Engineer and Tech Lead",
     tags: ["Databricks", "Kafka", "Spark Streaming", "Great Expectations"],
     status: "July 2023 - October 2024",
+    state: "SHIPPED · PRODUCTION",
+    architecture: {
+      title: "Streaming reliability path",
+      note: "Streaming lakehouse pattern for reliable feature and reporting datasets: ingest events, process with Spark, publish curated Delta datasets, and protect downstream consumers with quality gates.",
+      steps: [
+        {
+          label: "Event sources",
+          detail:
+            "High-volume application and operational events published into Kafka topics for downstream feature and reporting use cases.",
+        },
+        {
+          label: "Streaming ingestion",
+          detail:
+            "Spark Structured Streaming jobs on Databricks read Kafka streams and landed raw events into Delta Lake bronze tables.",
+        },
+        {
+          label: "Transformation",
+          detail:
+            "PySpark pipelines normalised event payloads, joined reference data, compacted files, and shaped silver datasets for reliable downstream use.",
+        },
+        {
+          label: "Quality gates",
+          detail:
+            "Great Expectations and Write-Audit-Publish checks validated critical datasets before publication to reduce recurring data-quality incidents.",
+        },
+        {
+          label: "Serving",
+          detail:
+            "Curated feature and reporting datasets supported production ML model inputs, operational reporting, and analytical workflows.",
+        },
+        {
+          label: "Operating model",
+          detail:
+            "Architecture reviews, coding standards, monitoring, and incident patterns moved the team away from reactive firefighting.",
+        },
+      ],
+    },
     sections: [
       {
         title: "Problem",
@@ -177,13 +367,6 @@ export const projects: Project[] = [
         body: [
           "The platform processed 50M+ daily events using Kafka and Spark Structured Streaming on Databricks Lakehouse pipelines.",
           "It supported reliable feature and reporting datasets for 3 production ML models, so quality and operational stability mattered as much as throughput.",
-        ],
-      },
-      {
-        title: "Architecture",
-        body: [
-          "The known architecture included Kafka, Spark Structured Streaming, Databricks Lakehouse pipelines, and downstream feature and reporting datasets.",
-          "Great Expectations and Write-Audit-Publish quality gates were added around critical pipelines to make failures visible before bad data reached consumers.",
         ],
       },
       {
@@ -213,6 +396,13 @@ export const projects: Project[] = [
         body: [
           "Streaming ML data platforms need reliability practices as much as throughput: quality gates, auditability, and clear engineering standards keep downstream models usable.",
           "The best operational fix was not one clever pipeline change; it was changing the delivery system around the pipelines.",
+        ],
+      },
+      {
+        title: "What failed",
+        body: [
+          "TODO: Karan to write 2-3 sentences on what failed in the streaming work — a quality gate that let bad data through, an incident that exposed a blind spot, or a delivery process that didn't survive contact with production.",
+          "Format: 'The initial [decision/check/assumption] did not account for [problem]. This caused [consequence] in [timeframe]. We fixed it by [solution], which [tradeoff].'",
         ],
       },
     ],
