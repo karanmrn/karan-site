@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Container } from "@/components/Container";
 
 const navItems = [
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Work" },
   { href: "/writing", label: "Writing" },
   { href: "/about", label: "About" },
   { href: "/resume", label: "Resume" },

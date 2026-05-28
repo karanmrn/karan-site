@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { projects } from "@/data/projects";
+import { companySystems, githubLabs, personalSystems } from "@/data/work";
 import { site } from "@/lib/site";
 
 const proofPoints = [
@@ -61,7 +62,7 @@ export default function Home() {
                 Open to Senior / Staff Data Engineer roles in the UK.
               </p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Button href="/projects">View Projects</Button>
+                <Button href="/projects">View Work</Button>
                 <Button href="/resume" variant="secondary">
                   Resume
                 </Button>
@@ -148,14 +149,111 @@ export default function Home() {
       <section className="border-b border-line py-16 sm:py-20">
         <Container size="wide">
           <SectionHeader
-            eyebrow="Featured work"
-            title="Three proof-led systems across lakehouses, metrics, and streaming reliability."
-            description="A portfolio weighted toward deep data platform credibility, with practical AI-native systems layered on top of governed data foundations."
+            eyebrow="Company systems"
+            title="The senior proof layer: architecture, influence, and measurable outcomes."
+            description="Company work shows depth: platform decisions, stakeholder alignment, business impact, and the judgement to make systems easier to operate."
+          />
+          <div className="mt-10 grid gap-4 lg:grid-cols-2">
+            {companySystems.map((system) => (
+              <article
+                key={system.company}
+                className="surface-line quiet-shadow rounded-md border border-line p-6"
+              >
+                <p className="text-xs uppercase tracking-[0.18em] text-accent-soft">
+                  {system.dates}
+                </p>
+                <h3 className="mt-5 text-2xl font-semibold text-foreground">
+                  {system.company}
+                </h3>
+                <p className="mt-2 text-sm text-muted">
+                  {system.role} / {system.location}
+                </p>
+                <p className="mt-5 text-sm leading-6 text-muted">
+                  {system.summary}
+                </p>
+                <div className="mt-6 grid gap-4 border-t border-line pt-5 md:grid-cols-2">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-accent-soft">
+                      Architecture
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-muted">
+                      {system.architecture}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-accent-soft">
+                      Influence
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-muted">
+                      {system.influence}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-line py-16 sm:py-20">
+        <Container size="wide">
+          <SectionHeader
+            eyebrow="Deep dives"
+            title="Three proof-led case studies across lakehouses, metrics, and streaming reliability."
+            description="These are the detailed systems I would expect a founder, CTO, or staff-level hiring panel to inspect first."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-line py-16 sm:py-20">
+        <Container size="wide">
+          <SectionHeader
+            eyebrow="Builder range"
+            title="Personal systems and GitHub labs show breadth without diluting the senior story."
+            description="The company work proves depth. The labs show range across product thinking, data science, machine learning, and AI systems."
+          />
+          <div className="mt-10 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="space-y-4">
+              {personalSystems.map((system) => (
+                <article
+                  key={system.name}
+                  className="rounded-md border border-line bg-panel p-5"
+                >
+                  <p className="text-xs uppercase tracking-[0.18em] text-accent-soft">
+                    {system.status}
+                  </p>
+                  <h3 className="mt-4 text-xl font-semibold text-foreground">
+                    {system.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {system.summary}
+                  </p>
+                </article>
+              ))}
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {githubLabs.map((lab) => (
+                <article
+                  key={lab.area}
+                  className="rounded-md border border-line bg-panel p-5"
+                >
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {lab.area}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {lab.intent}
+                  </p>
+                  <p className="mt-5 text-sm font-medium text-accent-soft">
+                    {lab.repos.length} selected repos
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
