@@ -6,6 +6,7 @@ import { Container } from "@/components/Container";
 
 type CaseStudyLayoutProps = {
   project: Project;
+  nextProject?: Project;
 };
 
 function ArchitectureFlow({ project }: CaseStudyLayoutProps) {
@@ -98,9 +99,9 @@ function EvidenceGallery({ project }: CaseStudyLayoutProps) {
   );
 }
 
-export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
+export function CaseStudyLayout({ project, nextProject }: CaseStudyLayoutProps) {
   return (
-    <main className="py-16 sm:py-24">
+    <main id="main-content" className="py-16 sm:py-24">
       <Container>
         <Link
           href="/projects"
@@ -108,7 +109,7 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
         >
           ← back to work
         </Link>
-        <div className="mt-10">
+        <header className="mt-10">
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <Badge key={tag}>{tag}</Badge>
@@ -127,7 +128,7 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
             {project.status}
             {project.state ? ` · ${project.state.toLowerCase()}` : ""}
           </p>
-        </div>
+        </header>
         <ArchitectureFlow project={project} />
         <EvidenceGallery project={project} />
         <div className="mt-16 border-t border-line">
@@ -137,7 +138,7 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
             return (
               <section
                 key={section.title}
-                className="grid gap-5 border-b border-line py-10 md:grid-cols-[240px_1fr]"
+                className="group/section grid gap-5 border-b border-line py-10 transition-all hover:border-l hover:border-l-accent/30 hover:pl-2 md:grid-cols-[240px_1fr]"
               >
                 <div>
                   <p
@@ -165,6 +166,35 @@ export function CaseStudyLayout({ project }: CaseStudyLayoutProps) {
             );
           })}
         </div>
+        {nextProject && (
+          <div className="mt-16 border-t border-line pt-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+              § up next
+            </p>
+            <Link
+              href={`/projects/${nextProject.slug}`}
+              className="group mt-4 flex items-start justify-between gap-6 rounded-md border border-line bg-panel p-5 transition hover:border-line-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            >
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-soft">
+                  {nextProject.focus}
+                </p>
+                <h2 className="font-display mt-3 text-2xl leading-tight text-foreground">
+                  {nextProject.title}
+                </h2>
+                <p className="mt-3 max-w-xl text-sm leading-6 text-muted">
+                  {nextProject.summary}
+                </p>
+              </div>
+              <span
+                aria-hidden="true"
+                className="mt-1 shrink-0 text-muted transition group-hover:translate-x-1 group-hover:text-foreground"
+              >
+                →
+              </span>
+            </Link>
+          </div>
+        )}
       </Container>
     </main>
   );

@@ -16,7 +16,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-20 border-b border-line bg-background/95">
+    <header className="sticky top-0 z-20 border-b border-line bg-background/80 backdrop-blur-md">
       <Container
         size="wide"
         className="flex min-h-16 items-center justify-between"
@@ -35,7 +35,7 @@ export function Navbar() {
                 pathname === item.href || pathname.startsWith(`${item.href}/`);
 
               return (
-                <li key={item.href}>
+                <li key={item.href} className={item.href === "/certifications" ? "hidden sm:block" : undefined}>
                   <Link
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}

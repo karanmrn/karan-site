@@ -37,5 +37,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  return <CaseStudyLayout project={project} />;
+  const currentIndex = projects.findIndex((p) => p.slug === slug);
+  const nextProject = projects[(currentIndex + 1) % projects.length];
+
+  return <CaseStudyLayout project={project} nextProject={nextProject} />;
 }

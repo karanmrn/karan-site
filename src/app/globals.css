@@ -102,9 +102,20 @@ a {
   font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+.prose-matter {
+  max-width: 65ch;
+}
+
 .prose-matter h2 {
   margin-top: 2.5rem;
   font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.prose-matter h3 {
+  margin-top: 2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--foreground);
 }
@@ -129,6 +140,72 @@ a {
 .prose-matter strong {
   color: var(--foreground);
   font-weight: 600;
+}
+
+.prose-matter blockquote {
+  margin-top: 1.5rem;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+  color: var(--muted-strong);
+  font-style: italic;
+}
+
+.prose-matter code {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875em;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0.15em 0.4em;
+  color: var(--accent-soft);
+}
+
+.prose-matter pre {
+  margin-top: 1.5rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+.prose-matter pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.prose-matter a {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-matter a:hover {
+  color: var(--foreground);
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0d1117 !important;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .surface-line {

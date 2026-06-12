@@ -3,9 +3,9 @@ import { Container } from "@/components/Container";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: `mailto:${site.email}`, label: "Email", aria: "Email Karan" },
-  { href: site.linkedin, label: "LinkedIn", aria: "Karan on LinkedIn" },
-  { href: site.github, label: "GitHub", aria: "Karan on GitHub" },
+  { href: `mailto:${site.email}`, label: "Email", aria: "Email Karan", external: false },
+  { href: site.linkedin, label: "LinkedIn", aria: "Karan on LinkedIn", external: true },
+  { href: site.github, label: "GitHub", aria: "Karan on GitHub", external: true },
 ];
 
 export function Footer() {
@@ -25,6 +25,7 @@ export function Footer() {
                 <Link
                   href={link.href}
                   aria-label={link.aria}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="text-sm text-muted transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                 >
                   {link.label}

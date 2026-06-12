@@ -40,9 +40,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <Badge key={tag}>{tag}</Badge>
         ))}
       </div>
-      <span className="font-mono mt-8 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-accent-soft transition group-hover:text-foreground">
-        Read case note <span aria-hidden="true">→</span>
-      </span>
+      <div className="mt-8 flex items-center justify-between gap-4">
+        <span className="font-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-accent-soft transition group-hover:text-foreground">
+          Read case note <span aria-hidden="true">→</span>
+        </span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+          {project.sections.length} sections
+        </span>
+      </div>
     </Link>
   );
 }

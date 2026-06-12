@@ -37,6 +37,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} - Senior Data Engineer`,
+    description: site.description,
+    images: ["/og"],
+  },
   icons: {
     icon: "/icon.svg",
   },
@@ -53,6 +59,12 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable} ${instrumentSerif.variable}`}
     >
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-panel focus:px-4 focus:py-2 focus:text-foreground focus:outline focus:outline-2 focus:outline-accent"
+        >
+          Skip to main content
+        </a>
         <Navbar />
         {children}
         <Footer />

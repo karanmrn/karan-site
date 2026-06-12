@@ -22,7 +22,7 @@ const proofPoints = [
     label: "daily events processed through Databricks streaming pipelines",
   },
   {
-    value: "80 -> <10",
+    value: "80 → <10",
     label: "monthly data quality incidents after reliability work",
   },
 ];
@@ -36,7 +36,7 @@ const operatingPrinciples = [
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <section className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
         <Container size="wide">
           <div className="grid gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
@@ -59,22 +59,24 @@ export default function Home() {
                 systems that help stakeholders make better decisions.
               </p>
               <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-line bg-panel/70 px-4 py-2">
-                <span className="live-dot h-2 w-2 rounded-full" />
+                <span aria-hidden="true" className="live-dot h-2 w-2 rounded-full" />
                 <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent-warm-soft">
                   Open to Senior / Staff / AI Engineer roles / UK
                 </p>
               </div>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <Button href="/projects">View Work</Button>
-                <Button href="/resume" variant="secondary">
-                  Resume
-                </Button>
                 <Button href={`mailto:${site.email}`} variant="ghost">
                   Get in Touch
+                </Button>
+                <Button href="/resume" variant="secondary">
+                  Resume
                 </Button>
               </div>
               <Link
                 href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-mono mt-6 inline-flex text-xs uppercase tracking-[0.18em] text-muted transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
                 linkedin.com/in/karanmanoharan23 →
@@ -126,7 +128,7 @@ export default function Home() {
                       incident_drop
                     </p>
                     <p className="font-mono sql-result-num mt-2 text-2xl">
-                      80 -&gt; &lt;10
+                      80 → &lt;10
                     </p>
                   </div>
                 </div>
