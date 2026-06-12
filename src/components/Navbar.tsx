@@ -9,7 +9,7 @@ const navItems = [
   { href: "/certifications", label: "Certs" },
   { href: "/writing", label: "Writing" },
   { href: "/about", label: "About" },
-  { href: "/resume", label: "Resume" },
+  { href: "/resume", label: "Builder" },
 ];
 
 export function Navbar() {

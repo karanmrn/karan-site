@@ -275,7 +275,7 @@ export const projects: Project[] = [
         title: "Business impact",
         body: [
           "The framework helped Sales rebalance low-margin accounts and Finance optimise rebate structures.",
-          "It contributed to GBP 2.2M revenue growth and 15% commercial uplift.",
+          "It contributed to GBP 2.2M revenue growth analysis and a 15% commercial uplift claim, with public wording bounded to contribution rather than sole ownership.",
           "The governed metric layer reduced analyst bottlenecks by 30%.",
         ],
       },
@@ -372,8 +372,8 @@ export const projects: Project[] = [
       {
         title: "Business impact",
         body: [
-          "The work improved team throughput by 40% and reduced production bugs by 60%.",
-          "It cut data quality incidents from 80 to under 10 per month and eliminated senior-leadership escalations.",
+          "The work supported 40% better team throughput and 60% fewer production bugs.",
+          "It cut data quality incidents from 80 to under 10 per month and reduced senior-leadership escalations.",
           "It created reliable feature and reporting datasets for 3 production ML models.",
         ],
       },

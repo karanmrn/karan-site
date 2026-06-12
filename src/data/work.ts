@@ -50,16 +50,16 @@ export const companySystems: CompanySystem[] = [
     dates: "November 2024 - Present",
     location: "Blackburn, United Kingdom",
     summary:
-      "Lead technical voice on the platform rebuild: Snowflake Iceberg medallion lakehouse, governed semantic metrics, Cortex-native AI analytics, and unit-economics decision systems across 1,389 retail outlets.",
+      "Lead technical voice on the platform rebuild: Snowflake Iceberg medallion lakehouse, governed semantic metrics, Cortex-native AI analytics, and unit-economics decision systems for commercial teams.",
     architecture:
       "Snowflake Iceberg medallion lakehouse with pre-aggregated gold models and dbt semantic layer feeding Power BI, Snowflake Intelligence, Cortex Search, Cortex Analyst, Cortex Agent, and Streamlit-in-Snowflake apps for Finance, Sales, Procurement, and Operations.",
     influence:
       "Re-engineered 200+ ELT pipelines with observability and governance, shaped Cortex-native AI access on top of the trusted semantic layer, and mentored analysts on CI/CD and dbt testing standards.",
     impact: [
-      "GBP 2.2M revenue growth (15%) and 5% trade-spend reduction across 1,389 retail outlets.",
-      "Operational waste down 8% and forecast accuracy up 25% through the unit-economics framework.",
+      "Unit-economics and customer analytics work contributed to GBP 2.2M revenue growth analysis and 5% trade-spend reduction across 1,389 retail outlets.",
+      "Budgeting and operational analysis supported 8% lower operational waste and 25% better forecast accuracy.",
       "Power BI dashboard refresh from 30 minutes to under 1 minute via pre-aggregated gold models.",
-      "Re-engineered 200+ ELT pipelines, eliminating 90% of failures.",
+      "Re-engineered 200+ ELT pipelines, reducing failures by 90%.",
       "Cortex Search, Analyst, and Agent integrations gave Finance and Sales natural-language access to governed metrics.",
       "Streamlit-in-Snowflake apps replaced ad-hoc spreadsheet reviews for margin and rebate inspection.",
     ],
@@ -114,13 +114,13 @@ export const companySystems: CompanySystem[] = [
     dates: "July 2023 - October 2024",
     location: "London, United Kingdom",
     summary:
-      "Greenfield Databricks Lakehouse platform ingesting 50M+ daily events for downstream ML, with hard reliability practices and a 4-person analytics team behind it.",
+      "Greenfield Databricks Lakehouse platform for downstream ML and reporting datasets, with hard reliability practices and a small analytics team behind it.",
     architecture:
       "Databricks Lakehouse on Delta Lake with Kafka pub-sub and Spark Structured Streaming for micro-batch and real-time processing, Z-Ordering and Bin-packing for query performance, and Great Expectations + Write-Audit-Publish gates around critical pipelines.",
     influence:
       "Led technical direction for a 4-person analytics team — architecture reviews, code-quality standards, and engineering practices that moved delivery from reactive firefighting to structured shipping.",
     impact: [
-      "Improved team delivery by 40% and reduced production bugs by 60%.",
+      "Engineering practices supported 40% better team delivery and 60% fewer production bugs.",
       "Reduced query latency by 40% via Z-Ordering, Bin-packing, and partition pruning.",
       "Cut data quality incidents to under 10 per month.",
       "Built reliable feature and reporting datasets supporting downstream ML models.",
@@ -133,7 +133,7 @@ export const companySystems: CompanySystem[] = [
     dates: "February 2020 - August 2022",
     location: "Chennai, India",
     summary:
-      "Lakehouse migration and performance engineering — moving legacy ETL onto Databricks Medallion with measurable compute savings.",
+      "Lakehouse migration and performance engineering: moving legacy ETL onto Databricks Medallion and making pipelines easier to operate.",
     architecture:
       "Idempotent PySpark pipelines on Databricks Medallion architecture ingesting 10GB daily from Postgres OLTP, Google Analytics, MongoDB, and external APIs.",
     influence:
@@ -151,7 +151,7 @@ export const companySystems: CompanySystem[] = [
     dates: "August 2018 - January 2020",
     location: "Delhi, India",
     summary:
-      "Pipeline orchestration and dimensional modelling foundation work — Airflow, cron, and Kimball star schemas at scale.",
+      "Pipeline orchestration and dimensional modelling foundation work using Airflow, cron, SQL, and Kimball-style modelling.",
     architecture:
       "Kimball star-schema models over 100GB daily data volumes with scalable pipelines orchestrated via Airflow and cron jobs.",
     influence:
@@ -180,7 +180,7 @@ export const personalSystems: PersonalSystem[] = [
     name: "London Rental Intelligence Platform",
     status: "Personal project / london.rent / 2026",
     summary:
-      "A rental intelligence platform with 130+ live data ingestors, automated failure recovery, and postcode-level rent pressure scoring across a 500m grid.",
+      "A rental intelligence platform prototype with 130+ planned/live data ingestors, automated failure recovery, and postcode-level rent pressure scoring across a 500m grid.",
     proof: [
       "Shows live ingestion, recovery paths, local scoring, and product thinking.",
       "Needs deployment/GitHub proof before it becomes a flagship public case study.",

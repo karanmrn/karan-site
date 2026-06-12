@@ -21,7 +21,7 @@ export default function AboutPage() {
         <SectionHeader
           eyebrow="About"
           title="I build data systems by reducing ambiguity."
-          description="My work sits at the intersection of data platforms, semantic systems, and AI-native analytics, with a principal-mindset across product, data science, data engineering, and AI engineering."
+          description="My work sits at the intersection of data platforms, semantic systems, and AI-native analytics: senior data engineering depth with practical AI systems built on governed data."
         />
         <div className="mt-12 space-y-6 text-base leading-7 text-muted">
           <p>
@@ -45,9 +45,9 @@ export default function AboutPage() {
           <p>
             I work across Snowflake, Databricks, dbt, Kafka, Spark, Power BI,
             and practical AI tooling such as Snowflake Intelligence, Cortex,
-            RAG pipelines, MCP, and vector databases. The through-line is not
-            the toolset. It is building systems that make better decisions more
-            likely.
+            RAG pipelines, MCP, and vector databases. The through-line is
+            governed data first, AI interfaces second: systems that make better
+            decisions more likely.
           </p>
           <p>I am based in the United Kingdom.</p>
         </div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
           <SectionHeader
             eyebrow="What I am aiming for"
             title="High-agency engineering roles where judgement compounds."
-            description="The target is a senior or staff-level role at a startup, top technology company, or AI-native team where data platforms, ML systems, and product judgement meet."
+            description="The target is a senior or staff-track role at a startup, top technology company, or AI-native team where data platforms, ML systems, and product judgement meet."
           />
           <div className="mt-8 space-y-5 text-base leading-7 text-muted">
             <p>

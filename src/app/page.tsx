@@ -8,30 +8,29 @@ import { projects } from "@/data/projects";
 import { companySystems, githubLabs, personalSystems } from "@/data/work";
 import { site } from "@/lib/site";
 
-const proofPoints = [
-  {
-    value: "1,389",
-    label: "outlets unified through Snowflake Iceberg lakehouse work",
-  },
-  {
-    value: "GBP 2.2M",
-    label: "revenue growth contribution through unit-economics work",
-  },
-  {
-    value: "50M+",
-    label: "daily events processed through Databricks streaming pipelines",
-  },
-  {
-    value: "80 → <10",
-    label: "monthly data quality incidents after reliability work",
-  },
-];
-
 const operatingPrinciples = [
   "Elegant simplicity over complex perfection",
   "First principles before fashionable architecture",
   "Situational awareness before premature optimisation",
   "Systems that align incentives, not just data models",
+];
+
+const systemLanes = [
+  {
+    title: "Lakehouse platforms",
+    description:
+      "Snowflake, Iceberg, Databricks, dbt, Spark, Kafka, orchestration, quality checks, and BI-ready data products.",
+  },
+  {
+    title: "AI-native analytics",
+    description:
+      "Snowflake Cortex, semantic layers, Streamlit apps, agent interfaces, RAG/MCP labs, and governed natural-language access.",
+  },
+  {
+    title: "Product experiments",
+    description:
+      "City-intelligence products, rental signals, scraping pipelines, ML notebooks, and small apps that turn messy data into action.",
+  },
 ];
 
 export default function Home() {
@@ -50,18 +49,19 @@ export default function Home() {
                 <span className="italic text-accent-warm">incentives</span>.
               </h1>
               <p className="font-mono mt-10 text-xs uppercase tracking-[0.22em] text-accent-soft">
-                Karan Manoharan · Senior Data Engineer · AI Engineer
+                Karan Manoharan · Senior Data Engineer building AI-native systems
               </p>
               <p className="mt-6 max-w-2xl text-base leading-7 text-muted sm:text-lg">
                 I build data platforms with one core belief: elegant simplicity
                 beats complex perfection. I lead from first principles, turning
-                ambiguous business problems into trusted, scalable data and AI
-                systems that help stakeholders make better decisions.
+                ambiguous business problems into governed data systems,
+                semantic layers, and practical AI interfaces that help teams
+                make better decisions.
               </p>
               <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-line bg-panel/70 px-4 py-2">
                 <span aria-hidden="true" className="live-dot h-2 w-2 rounded-full" />
                 <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent-warm-soft">
-                  Open to Senior / Staff / AI Engineer roles / UK
+                  Open to Senior Data / Analytics Platform / AI Systems roles / UK
                 </p>
               </div>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -70,7 +70,7 @@ export default function Home() {
                   Get in Touch
                 </Button>
                 <Button href="/resume" variant="secondary">
-                  Resume
+                  Builder Profile
                 </Button>
               </div>
               <Link
@@ -86,7 +86,7 @@ export default function Home() {
             <aside className="sql-block quiet-shadow overflow-hidden">
               <div className="flex items-center justify-between border-b border-line bg-background/60 px-4 py-2.5">
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-                  karan.shipped · worksheet
+                  karan.builder · stack
                 </p>
                 <div className="flex gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-line-strong" />
@@ -95,46 +95,39 @@ export default function Home() {
                 </div>
               </div>
               <pre className="overflow-x-auto px-5 py-6 text-[13px] leading-6 text-muted-strong">
-{`  `}<span className="sql-keyword">SELECT</span>{` `}<span className="sql-keyword">*</span>{` `}<span className="sql-keyword">FROM</span>{` karan.shipped`}<span className="sql-keyword">;</span>
+{`  `}<span className="sql-keyword">SELECT</span>{` system, interface, judgement `}
+<span className="sql-keyword">FROM</span>{` karan.builds`}<span className="sql-keyword">;</span>
               </pre>
               <div className="border-t border-line bg-background/40">
-                <div className="grid grid-cols-2 divide-x divide-line">
+                <div className="divide-y divide-line">
                   <div className="p-4">
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                      outlets
+                      data_platforms
                     </p>
-                    <p className="font-mono sql-result-num mt-2 text-2xl">
-                      1,389
+                    <p className="mt-2 text-sm leading-6 text-muted">
+                      Lakehouses, semantic layers, orchestration, quality gates.
                     </p>
                   </div>
                   <div className="p-4">
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                      revenue_growth
+                      ai_interfaces
                     </p>
-                    <p className="font-mono sql-result-num mt-2 text-2xl">
-                      GBP 2.2M
-                    </p>
-                  </div>
-                  <div className="border-t border-line p-4">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                      daily_events
-                    </p>
-                    <p className="font-mono sql-result-num mt-2 text-2xl">
-                      50M+
+                    <p className="mt-2 text-sm leading-6 text-muted">
+                      Cortex, agents, RAG, MCP, governed natural language.
                     </p>
                   </div>
-                  <div className="border-t border-line p-4">
+                  <div className="p-4">
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                      incident_drop
+                      builder_range
                     </p>
-                    <p className="font-mono sql-result-num mt-2 text-2xl">
-                      80 → &lt;10
+                    <p className="mt-2 text-sm leading-6 text-muted">
+                      Internal apps, city intelligence, scraping, ML, product systems.
                     </p>
                   </div>
                 </div>
                 <div className="border-t border-line px-4 py-2">
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-                    4 rows · 0.12s · cached
+                    builder profile · systems over titles
                   </p>
                 </div>
               </div>
@@ -184,21 +177,26 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-b border-line bg-panel/35 py-6">
+      <section className="border-b border-line bg-panel/35 py-14 sm:py-16">
         <Container size="wide">
-          <div className="grid gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-4">
-            {proofPoints.map((point, i) => (
-              <div key={point.value} className="bg-background/95 p-5">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-                  §{String(i + 1).padStart(2, "0")} · proof
+          <SectionHeader
+            eyebrow="Systems I build"
+            title="A builder profile across data, AI, and product systems."
+            description="The point is not only where I have worked. It is the range of systems I can design, ship, explain, and improve."
+          />
+          <div className="mt-8 grid gap-px overflow-hidden rounded-md border border-line bg-line lg:grid-cols-3">
+            {systemLanes.map((lane, i) => (
+              <article key={lane.title} className="bg-background/95 p-6">
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent-warm">
+                  §{String(i + 1).padStart(2, "0")} · build lane
                 </p>
-                <p className="font-mono mt-4 text-3xl text-accent-warm">
-                  {point.value}
+                <h2 className="font-display mt-4 text-2xl leading-tight text-foreground">
+                  {lane.title}
+                </h2>
+                <p className="mt-4 text-sm leading-6 text-muted">
+                  {lane.description}
                 </p>
-                <p className="mt-3 text-sm leading-6 text-muted">
-                  {point.label}
-                </p>
-              </div>
+              </article>
             ))}
           </div>
         </Container>
